@@ -1,4 +1,4 @@
-# RigolDHO914S
+# Common Issues in the Rigol DHO914S Bode Plot Function and Effective Solutions
 This repository aims to describe and implement Standard Commands for Programmable Instruments (SCPI) communication over the Universal Serial Bus (USB) with the Rigol DHO914S oscilloscope to acquire low-noise, high-resolution Bode diagrams for the analysis of signals and systems.
 
 ![Rigol DHO914S](images/rigol.webp)
@@ -8,3 +8,9 @@ The Rigol DHO914S is a 12-bit digital oscilloscope with a maximum analog bandwid
 One of the problems encountered was related to the Bode plot diagram. The oscilloscope itself includes a built-in Bode plot function. However, when analyzing the plotted results, small undulations — resembling ripples or fringes — were observed in both the gain (dB) and the phase (°) curves.
 
 ![Bode fringes](images/Bode_fringe.png)
+
+As observed in the figure above, both the gain (dB) and the phase (°) exhibit small ripples — slight undulations superimposed on the expected curves. We acquired the signal multiple times, initially suspecting random white noise as the source. However, the consistent presence of these ripples across measurements suggests that they are not random in nature.
+
+One possible source of this behavior is the internal method used by the oscilloscope to calculate gain and phase between the two signals. Potential contributors include FFT leakage, windowing effects, or even the internal arithmetic processing. The Rigol DHO914S is based on Field Programmable Gate Arrays (FPGAs) and Digital Signal Processors (DSPs), which are responsible for performing these mathematical operations. These hardware components typically use fixed-point arithmetic with limited precision instead of high-precision floating-point arithmetic (such as IEEE 754 double precision, float64).
+
+Considering everything analyzed so far, I used Python, USB, and SCPI commands to establish communication with the oscilloscope through a more modular script. This allowed me to acquire both the input and output waveforms of the system under study. With these signals in hand, I implemented methods to calculate the gain (dB) and phase (°) plots.
