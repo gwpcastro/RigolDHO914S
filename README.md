@@ -14,3 +14,7 @@ As observed in the figure above, both the gain (dB) and the phase (°) exhibit s
 One possible source of this behavior is the internal method used by the oscilloscope to calculate gain and phase between the two signals. Potential contributors include FFT leakage, windowing effects, or even the internal arithmetic processing. The Rigol DHO914S is based on Field Programmable Gate Arrays (FPGAs) and Digital Signal Processors (DSPs), which are responsible for performing these mathematical operations. These hardware components typically use fixed-point arithmetic with limited precision instead of high-precision floating-point arithmetic (such as IEEE 754 double precision, float64).
 
 Considering everything analyzed so far, I used Python, USB, and SCPI commands to establish communication with the oscilloscope through a more modular script. This allowed me to acquire both the input and output waveforms of the system under study. With these signals in hand, I implemented methods to calculate the gain (dB) and phase (°) plots.
+
+![Bode PC](images/Bode_PC.png)
+
+As shown above, the image was taken using my personal computer with the same data.
