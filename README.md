@@ -17,4 +17,4 @@ Considering everything analyzed so far, I used Python, USB, and SCPI commands to
 
 ![Bode PC](images/Bode_PC.png)
 
-As shown above, the image was taken using my personal computer with the same data. We can clearly see the the differences between both. It doesn't seem to be influenced by system response, although those resembling ripples are persistent.  
+As shown above, the image was taken using my personal computer with the same data. We can clearly see the the differences between both. It doesn't seem to be influenced by system response,  considering those resembling ripples are persistent.  
