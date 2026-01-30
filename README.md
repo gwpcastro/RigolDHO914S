@@ -22,4 +22,4 @@ As shown above, the image was taken using my personal computer with the same dat
 According to Analog Devices article (2015), "with fixed-point notation, the gaps between adjacent numbers always equal a value of one, whereas in floating-point notation, gaps between adjacent numbers are not uniformly spaced – the gap between any two numbers is approximately ten million times smaller than the value of the numbers (ANSI/IEEE Std. 754 standard format), with large gaps between large numbers and small gaps between small numbers." It could explain
 
 
-## OBS.: Files here are still a prototipe.
+## OBS.: Files here are still a prototype.
